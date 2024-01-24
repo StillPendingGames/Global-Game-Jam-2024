@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     {
         playerInputActions = new PlayerInput();
         playerInputActions.Movement.Enable();
-        //playerInputActions.Movement.Move.performed += MovementPerformed;
         playerInputActions.Movement.Jump.started += Jump;
         playerInputActions.Movement.Jump.canceled += StopJump;
         playerInputActions.Movement.Aim.performed += Aim;
@@ -22,19 +21,10 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         playerInputActions.Movement.Disable();
-        //playerInputActions.Movement.Move.performed -= MovementPerformed;
         playerInputActions.Movement.Jump.started -= Jump;
         playerInputActions.Movement.Jump.canceled -= StopJump;
         playerInputActions.Movement.Jump.performed -= Aim;
     }
-
-    /*
-    private void MovementPerformed(InputAction.CallbackContext context)
-    {
-        Vector2 inputVector = context.ReadValue<Vector2>();
-        playerMovement.SetHorizontal(inputVector.x);
-    }
-    */
 
     private void Jump(InputAction.CallbackContext context)
     {

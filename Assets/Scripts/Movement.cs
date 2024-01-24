@@ -15,11 +15,6 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private bool isFacingRight = true;
 
-    private void Update()
-    {
-        Flip();
-    }
-
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
@@ -32,20 +27,19 @@ public class Movement : MonoBehaviour
 
     private void Flip()
     {
-        if(isFacingRight && horizontal < 0f)
+        if(isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            isFacingRight = true;
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
-        else if (!isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = false;
-        }
-        spriteRenderer.flipX = isFacingRight;
     }
 
     public void SetHorizontal(float givenHorizontal)
     {
         horizontal = givenHorizontal;
+        Flip();
     }
 
     public void TryJump()
