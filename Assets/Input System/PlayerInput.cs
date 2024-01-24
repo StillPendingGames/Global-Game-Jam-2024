@@ -31,13 +31,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""5d72a294-a6e6-432e-bb08-334d610b5e75"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Pose"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Aim"",
+                    ""name"": ""AimViaDirection"",
                     ""type"": ""Value"",
                     ""id"": ""148678b0-6050-48e3-8c76-26c00c7eaae0"",
                     ""expectedControlType"": ""Vector2"",
@@ -53,6 +53,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimViaMouse"",
+                    ""type"": ""Value"",
+                    ""id"": ""2a5c22d2-9306-479f-b526-6bb63dc78e89"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -129,7 +138,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -140,53 +149,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ecb7ace6-08cd-4183-a379-ab3a6bf97839"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b19a8a2c-8de1-47f0-b121-7a9628fb8f31"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""7c483e7e-ab09-4bb9-96e9-ea22846b97f7"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""4379b59a-eb34-4412-a381-dc0d24bf7565"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""DPAD"",
@@ -195,7 +160,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -206,7 +171,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -217,7 +182,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -228,7 +193,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -239,7 +204,51 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""AimViaDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ecb7ace6-08cd-4183-a379-ab3a6bf97839"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimViaDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b19a8a2c-8de1-47f0-b121-7a9628fb8f31"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimViaDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7c483e7e-ab09-4bb9-96e9-ea22846b97f7"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimViaDirection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4379b59a-eb34-4412-a381-dc0d24bf7565"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimViaDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -264,6 +273,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8db9901a-fbc3-4b8f-9932-75cb8b65173b"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimViaMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -273,8 +293,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Movement
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
-        m_Movement_Aim = m_Movement.FindAction("Aim", throwIfNotFound: true);
+        m_Movement_AimViaDirection = m_Movement.FindAction("AimViaDirection", throwIfNotFound: true);
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
+        m_Movement_AimViaMouse = m_Movement.FindAction("AimViaMouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -337,15 +358,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Movement;
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_Move;
-    private readonly InputAction m_Movement_Aim;
+    private readonly InputAction m_Movement_AimViaDirection;
     private readonly InputAction m_Movement_Jump;
+    private readonly InputAction m_Movement_AimViaMouse;
     public struct MovementActions
     {
         private @PlayerInput m_Wrapper;
         public MovementActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Movement_Move;
-        public InputAction @Aim => m_Wrapper.m_Movement_Aim;
+        public InputAction @AimViaDirection => m_Wrapper.m_Movement_AimViaDirection;
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
+        public InputAction @AimViaMouse => m_Wrapper.m_Movement_AimViaMouse;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -358,12 +381,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Aim.started += instance.OnAim;
-            @Aim.performed += instance.OnAim;
-            @Aim.canceled += instance.OnAim;
+            @AimViaDirection.started += instance.OnAimViaDirection;
+            @AimViaDirection.performed += instance.OnAimViaDirection;
+            @AimViaDirection.canceled += instance.OnAimViaDirection;
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @AimViaMouse.started += instance.OnAimViaMouse;
+            @AimViaMouse.performed += instance.OnAimViaMouse;
+            @AimViaMouse.canceled += instance.OnAimViaMouse;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -371,12 +397,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Aim.started -= instance.OnAim;
-            @Aim.performed -= instance.OnAim;
-            @Aim.canceled -= instance.OnAim;
+            @AimViaDirection.started -= instance.OnAimViaDirection;
+            @AimViaDirection.performed -= instance.OnAimViaDirection;
+            @AimViaDirection.canceled -= instance.OnAimViaDirection;
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @AimViaMouse.started -= instance.OnAimViaMouse;
+            @AimViaMouse.performed -= instance.OnAimViaMouse;
+            @AimViaMouse.canceled -= instance.OnAimViaMouse;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -397,7 +426,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
+        void OnAimViaDirection(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnAimViaMouse(InputAction.CallbackContext context);
     }
 }

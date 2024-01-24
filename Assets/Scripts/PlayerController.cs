@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
         playerInputActions.Movement.Enable();
         playerInputActions.Movement.Jump.started += Jump;
         playerInputActions.Movement.Jump.canceled += StopJump;
-        playerInputActions.Movement.Aim.performed += Aim;
+        playerInputActions.Movement.AimViaMouse.performed += AimWithMouse;
+        playerInputActions.Movement.AimViaDirection.performed += AimWithKeyboardOrController;
 
         HealthComponent health = GetComponent<HealthComponent>();
         health.OnDeath += OnDeath;
@@ -29,7 +30,8 @@ public class PlayerController : MonoBehaviour
         playerInputActions.Movement.Disable();
         playerInputActions.Movement.Jump.started -= Jump;
         playerInputActions.Movement.Jump.canceled -= StopJump;
-        playerInputActions.Movement.Jump.performed -= Aim;
+        playerInputActions.Movement.AimViaMouse.performed -= AimWithMouse;
+        playerInputActions.Movement.AimViaDirection.performed -= AimWithKeyboardOrController;
     }
 
     private void Jump(InputAction.CallbackContext context)
@@ -42,7 +44,12 @@ public class PlayerController : MonoBehaviour
         playerMovement.HaltJump();
     }    
 
-    private void Aim(InputAction.CallbackContext context)
+    private void AimWithMouse(InputAction.CallbackContext context)
+    {
+        aimingScript.AimWithMouse(context.ReadValue<Vector2>());
+    }
+
+    private void AimWithKeyboardOrController(InputAction.CallbackContext context)
     {
         aimingScript.Aim(context.ReadValue<Vector2>());
     }

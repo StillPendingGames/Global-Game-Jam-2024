@@ -9,13 +9,13 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "5d72a294-a6e6-432e-bb08-334d610b5e75",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Pose",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Aim",
+                    "name": "AimViaDirection",
                     "type": "Value",
                     "id": "148678b0-6050-48e3-8c76-26c00c7eaae0",
                     "expectedControlType": "Vector2",
@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AimViaMouse",
+                    "type": "Value",
+                    "id": "2a5c22d2-9306-479f-b526-6bb63dc78e89",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -107,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -118,53 +127,9 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "ecb7ace6-08cd-4183-a379-ab3a6bf97839",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "b19a8a2c-8de1-47f0-b121-7a9628fb8f31",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "7c483e7e-ab09-4bb9-96e9-ea22846b97f7",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "4379b59a-eb34-4412-a381-dc0d24bf7565",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "DPAD",
@@ -173,7 +138,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -184,7 +149,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -195,7 +160,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -206,7 +171,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -217,7 +182,51 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AimViaDirection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
+                    "id": "ecb7ace6-08cd-4183-a379-ab3a6bf97839",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimViaDirection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b19a8a2c-8de1-47f0-b121-7a9628fb8f31",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimViaDirection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "7c483e7e-ab09-4bb9-96e9-ea22846b97f7",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimViaDirection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "4379b59a-eb34-4412-a381-dc0d24bf7565",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimViaDirection",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -240,6 +249,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8db9901a-fbc3-4b8f-9932-75cb8b65173b",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimViaMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
