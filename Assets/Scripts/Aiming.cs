@@ -8,9 +8,9 @@ public class Aiming : MonoBehaviour
 
     public void Aim(Vector2 direction)
     {
-        Debug.Log(direction);
-        Vector2 aimDirection = direction.normalized;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        objectToRotate.rotation = Quaternion.Euler(0, 0, angle);
+        Vector2 inputDirection = new Vector2(direction.x, direction.y).normalized;
+        float angleRad = (Mathf.Atan2(inputDirection.y, inputDirection.x)) * Mathf.Rad2Deg;
+        float quantizedAngle = Mathf.Round(angleRad / 45.0f) * 45.0f;
+        objectToRotate.rotation = Quaternion.Euler(0, 0, quantizedAngle);
     }
 }
