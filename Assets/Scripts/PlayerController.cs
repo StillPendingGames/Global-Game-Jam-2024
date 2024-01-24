@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Movement playerMovement;
+    [SerializeField] private Aiming aimingScript;
     private PlayerInput playerInputActions;
 
     private void OnEnable()
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void Aim(InputAction.CallbackContext context)
     {
-
+        aimingScript.Aim(context.ReadValue<Vector2>());
     }
 
     private void Update()

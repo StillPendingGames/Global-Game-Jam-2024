@@ -27,13 +27,15 @@ public class Movement : MonoBehaviour
 
     private void Flip()
     {
-        if(isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        if(isFacingRight && horizontal < 0f)
         {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            isFacingRight = true;
         }
+        else if (!isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = false;
+        }
+        spriteRenderer.flipX = isFacingRight;
     }
 
     public void SetHorizontal(float givenHorizontal)
