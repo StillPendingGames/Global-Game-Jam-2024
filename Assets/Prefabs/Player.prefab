@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 319333917831612473}
   - component: {fileID: 6548026854512670292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7984328486010964311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,8 @@ GameObject:
   - component: {fileID: 7984328487021927106}
   - component: {fileID: 7984328487021927109}
   - component: {fileID: 7984328487021927108}
-  m_Layer: 0
+  - component: {fileID: 1577011187878351375}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,3 +286,16 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &1577011187878351375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984328487021927167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3769c9885acf6458cde305e2b3c441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHealth: 10

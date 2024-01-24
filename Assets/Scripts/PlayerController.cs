@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
         playerInputActions.Movement.Jump.started += Jump;
         playerInputActions.Movement.Jump.canceled += StopJump;
         playerInputActions.Movement.Aim.performed += Aim;
+
+        HealthComponent health = GetComponent<HealthComponent>();
+        health.OnDeath += OnDeath;
+
+        // TODO: Add Player Controller or GameObject to a Service Locater
     }
 
     private void OnDisable()
@@ -44,5 +49,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         playerMovement.SetHorizontal(playerInputActions.Movement.Move.ReadValue<Vector2>().x);
+    }
+
+    private void OnDeath(object sender, System.EventArgs args) {
+        // TODO: Bring up Death screen UI and play death animation
+
+        // For now just reload the player back into the main scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 }
