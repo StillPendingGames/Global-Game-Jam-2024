@@ -18,7 +18,7 @@ public class Aiming : MonoBehaviour
         Vector2 inputDirection = new Vector2(direction.x, direction.y).normalized;
         float angleRad = (Mathf.Atan2(inputDirection.y, inputDirection.x)) * Mathf.Rad2Deg;
         float quantizedAngle = Mathf.Round(angleRad / 45.0f) * 45.0f;
-        objectToRotate.rotation = Quaternion.Euler(0, 0, quantizedAngle);        
+        objectToRotate.rotation = Quaternion.Euler(0, 0, quantizedAngle);
     }
 
 }
