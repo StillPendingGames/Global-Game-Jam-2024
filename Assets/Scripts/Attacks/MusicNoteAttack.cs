@@ -37,7 +37,6 @@ public class MusicNoteAttack : IAttack
     {
         while (m_coroutine != null)
         {
-            Debug.Log("Update Attack called");
             GameObject obj = SimpleObjectPool.Spawn(m_notePrefab, transform.position);
             if (obj.TryGetComponent(out Projectile projectile))
             {

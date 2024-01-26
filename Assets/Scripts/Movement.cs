@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Animator animator;
 
     private float horizontal;
     private bool isFacingRight = true;
@@ -29,19 +30,31 @@ public class Movement : MonoBehaviour
     {
         if(isFacingRight && horizontal < 0f)
         {
-            isFacingRight = true;
+            isFacingRight = false;
         }
         else if (!isFacingRight && horizontal > 0f)
         {
-            isFacingRight = false;
+            isFacingRight = true;
         }
-        spriteRenderer.flipX = isFacingRight;
+        spriteRenderer.flipX = !isFacingRight;
     }
 
     public void SetHorizontal(float givenHorizontal)
     {
         horizontal = givenHorizontal;
         Flip();
+        if (animator != null)
+        {
+            if(horizontal != 0)
+            {
+                Debug.Log("Set Running True");
+                animator.SetBool("Running", true);
+            }
+            else
+            {
+                animator.SetBool("Running", false);
+            }
+        }
     }
 
     public void TryJump()
