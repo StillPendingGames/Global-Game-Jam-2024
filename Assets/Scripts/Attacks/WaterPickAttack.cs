@@ -28,7 +28,7 @@ public class WaterPickAttack : MonoBehaviour
         m_coroutine = StartCoroutine(UpdateAttack());
     }
 
-    public override void StopAttack() 
+    public void StopAttack() 
     {
         if (m_coroutine == null) return;
         StopCoroutine(m_coroutine);
