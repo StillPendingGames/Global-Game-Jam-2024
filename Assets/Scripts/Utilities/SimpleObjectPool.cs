@@ -117,12 +117,12 @@ public static class SimpleObjectPool
 	///<summary>
 	///Function that allows for preloading of objects. This can be helful with objects that you know you will need lots of in quick succession. Not necessary for most items/objects.
 	///</summary>
-	public static void Preload(GameObject prefab, int qty = 1) {
+	public static void Preload(GameObject prefab, int qty = 1, Transform parent = null) {
 		Init(prefab, qty);
 
 		GameObject[] objects = new GameObject[qty];
 		for(int i = 0; i < qty; i++) {
-			objects[i] = Spawn(prefab, Vector3.zero, Quaternion.identity);
+			objects[i] = Spawn(prefab, Vector3.zero, Quaternion.identity, parent);
 		}
 
 		for(int i = 0; i < qty; i++) {
@@ -132,6 +132,10 @@ public static class SimpleObjectPool
 
     public static GameObject Spawn(GameObject prefab, Vector3 pos) {
         return Spawn(prefab, pos, Quaternion.identity);
+    }
+
+	public static GameObject Spawn(GameObject prefab, Vector3 pos, Transform parent = null) {
+        return Spawn(prefab, pos, Quaternion.identity, parent);
     }
 
     public static GameObject Spawn(GameObject prefab, Vector3 pos, Vector3 rot, Transform parent = null) {

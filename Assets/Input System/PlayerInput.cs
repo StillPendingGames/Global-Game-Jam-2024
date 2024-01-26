@@ -62,6 +62,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""b715eb83-3c1d-4ab6-9576-826f73fdd905"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -284,6 +293,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""AimViaMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a6b0849-6e5a-4985-8440-a0df8c24fd47"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b477cc8-d07c-47a0-8ade-7439f337deb4"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -296,6 +327,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Movement_AimViaDirection = m_Movement.FindAction("AimViaDirection", throwIfNotFound: true);
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
         m_Movement_AimViaMouse = m_Movement.FindAction("AimViaMouse", throwIfNotFound: true);
+        m_Movement_Attack = m_Movement.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -361,6 +393,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_AimViaDirection;
     private readonly InputAction m_Movement_Jump;
     private readonly InputAction m_Movement_AimViaMouse;
+    private readonly InputAction m_Movement_Attack;
     public struct MovementActions
     {
         private @PlayerInput m_Wrapper;
@@ -369,6 +402,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @AimViaDirection => m_Wrapper.m_Movement_AimViaDirection;
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
         public InputAction @AimViaMouse => m_Wrapper.m_Movement_AimViaMouse;
+        public InputAction @Attack => m_Wrapper.m_Movement_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -390,6 +424,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @AimViaMouse.started += instance.OnAimViaMouse;
             @AimViaMouse.performed += instance.OnAimViaMouse;
             @AimViaMouse.canceled += instance.OnAimViaMouse;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -406,6 +443,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @AimViaMouse.started -= instance.OnAimViaMouse;
             @AimViaMouse.performed -= instance.OnAimViaMouse;
             @AimViaMouse.canceled -= instance.OnAimViaMouse;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -429,5 +469,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnAimViaDirection(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAimViaMouse(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }
