@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3769c9885acf6458cde305e2b3c441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 3
   invincibilityDuration: 1
 --- !u!114 &2389408435271823945
 MonoBehaviour:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_projectileData:
     damage: 1
-    force: 1200
+    force: 1600
     maxLifetime: 4
     targetTag: Enemy
   m_waterPrefab: {fileID: 6630032684861506937, guid: 04cab152d86dce54ca7aa5826b36b61b, type: 3}

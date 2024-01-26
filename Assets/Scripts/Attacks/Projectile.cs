@@ -43,6 +43,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.TryGetComponent(out HealthComponent health)) 
         {
             health.TakeDamge(m_data.damage);
+            SimpleObjectPool.Despawn(gameObject);
         }
     }
 }

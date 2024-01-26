@@ -214,6 +214,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 961013001}
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadGameScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342100450, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599813351, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.39996338
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965366438, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.10003662
+      objectReference: {fileID: 0}
     - target: {fileID: 1598794669223979073, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -264,3 +300,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+--- !u!1 &961013000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130601215725096189, guid: fb80642ac14b6e647b99c659a3b5b836, type: 3}
+  m_PrefabInstance: {fileID: 961012999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &961013001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961013000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf0d9edc5e6b6e4a878d6855a12a6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
