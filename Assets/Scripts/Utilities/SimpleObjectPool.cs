@@ -92,7 +92,7 @@ public static class SimpleObjectPool
 	// public pool events interface so other components can listen for pool events
 	public abstract class IPoolEvents : MonoBehaviour {
 		public event System.EventHandler<bool> OnSpawn;
-		protected void InvokeOnSpawn(bool inital) => OnSpawn.Invoke(gameObject, inital);
+		protected void InvokeOnSpawn(bool inital) => OnSpawn?.Invoke(gameObject, inital);
 	}
 
 	///<summary>
