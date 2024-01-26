@@ -4,6 +4,7 @@ using UnityEngine;
 
 // This is a class instead of a struct because I want it to be passed over by reference instead of by value
 // As per the flyweight pattern to condense a bunch of useless data down into
+[System.Serializable]
 public class ProjectileData {
     public int damage;
     public int speed;
