@@ -22,10 +22,10 @@ public class Projectile : MonoBehaviour
         m_direction = direction;
     }
 
-    void Update() 
+    private void FixedUpdate()
     {
         // Move Projectile
-        transform.position += m_direction * m_data.speed * Time.deltaTime;
+        transform.position += m_direction * m_data.speed * Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

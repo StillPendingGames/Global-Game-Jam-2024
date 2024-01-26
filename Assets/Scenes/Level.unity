@@ -532,6 +532,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1309155960648514152, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309155960648514152, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: m_projectileData.speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309155960648514152, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: m_projectileData.damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098457435563748949, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098457435563748949, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8252266668644812988, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: m_RootOrder
       value: 2

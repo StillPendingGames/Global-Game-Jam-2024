@@ -24,7 +24,7 @@ public class WaterPickAttack : IAttack
         m_coroutine = StartCoroutine(UpdateAttack());
     }
 
-    public void StopAttack() 
+    public override void StopAttack() 
     {
         if (m_coroutine == null) return;
         StopCoroutine(m_coroutine);

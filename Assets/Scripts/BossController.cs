@@ -4,15 +4,48 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    private IAttack attackManager;
+    [SerializeField] private IAttack[] attacks;
+    [SerializeField] protected float cooldownBetweenAttacks;
+    private IAttack currentAttack;
+    private bool attacking;
 
-    void Start()
+    private void Awake()
     {
-        
+        foreach (IAttack attack in attacks)
+        {
+            attack.OnAttackFinished += CurrentAttackEnded;
+        }
     }
 
-    void Update()
+    private void Start()
     {
-        
+        StartFight();
+    }
+
+    public void StartFight()
+    {
+       StartCoroutine(Cooldown(3));
+    }
+
+    private void CurrentAttackEnded(object sender, System.EventArgs e)
+    {
+        StartCoroutine(Cooldown(cooldownBetweenAttacks));
+    }
+
+    private IEnumerator Cooldown(float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        NextAttack();
+    }
+
+    private void NextAttack()
+    {
+        currentAttack = attacks[Random.Range(0, attacks.Length)];
+        currentAttack.StartAttack();
+    }
+
+    public void StartLaugh()
+    {
+        currentAttack.StopAttack();
     }
 }
