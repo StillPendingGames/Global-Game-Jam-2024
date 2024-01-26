@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Movement playerMovement;
     [SerializeField] private Aiming aimingScript;
+    [SerializeField] private WaterPickAttack playerAttack;
     private PlayerInput playerInputActions;
 
     private void OnEnable()
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
         playerInputActions.Movement.Jump.canceled += StopJump;
         playerInputActions.Movement.AimViaMouse.performed += AimWithMouse;
         playerInputActions.Movement.AimViaDirection.performed += AimWithKeyboardOrController;
+
+
+        playerInputActions.Movement.Attack.started += StartAttack;
+        playerInputActions.Movement.Attack.canceled += StopAttack;
 
         HealthComponent health = GetComponent<HealthComponent>();
         health.OnDeath += OnDeath;
@@ -52,6 +57,16 @@ public class PlayerController : MonoBehaviour
     private void AimWithKeyboardOrController(InputAction.CallbackContext context)
     {
         aimingScript.Aim(context.ReadValue<Vector2>());
+    }
+
+    private void StartAttack(InputAction.CallbackContext context)
+    {
+        playerAttack.StartAttack();
+    }
+
+    private void StopAttack(InputAction.CallbackContext context)
+    {
+        playerAttack.StopAttack();
     }
 
     private void Update()
