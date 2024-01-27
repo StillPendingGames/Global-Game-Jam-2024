@@ -565,17 +565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3769c9885acf6458cde305e2b3c441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1137431905 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-  m_PrefabInstance: {fileID: 8252266669329904462}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1abdffc581e0c943b8db0ef772b8227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1186124625
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,11 +871,6 @@ Transform:
 --- !u!1 &1899495996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7519890946949002261, guid: 4820f29afa48e884b9f2413f773198d9, type: 3}
-  m_PrefabInstance: {fileID: 7519890945625175593}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1899495997 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7519890946949002260, guid: 4820f29afa48e884b9f2413f773198d9, type: 3}
   m_PrefabInstance: {fileID: 7519890945625175593}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1899495999
@@ -1259,41 +1243,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: valve
-      value: 
-      objectReference: {fileID: 1899495997}
-    - target: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: rotationSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 519420032}
-    - target: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: targetRotation.z
-      value: 55
-      objectReference: {fileID: 0}
     - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: valve
       value: 
       objectReference: {fileID: 1899495996}
-    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: attacks.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: valveRotationSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: attacks.Array.data[0]
-      value: 
-      objectReference: {fileID: 1137431905}
-    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: valveTargetRotation.z
-      value: 55
-      objectReference: {fileID: 0}
     - target: {fileID: 8252266668644812988, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: m_RootOrder
       value: 2

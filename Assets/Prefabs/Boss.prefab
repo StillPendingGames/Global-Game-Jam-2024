@@ -339,6 +339,10 @@ MonoBehaviour:
   - {fileID: 1309155960648514152}
   - {fileID: 1353351981007642937}
   cooldownBetweenAttacks: 5
+  valve: {fileID: 0}
+  valveTargetRotation: {x: 0, y: 0, z: 55}
+  valveRotationSpeed: 6
+  winScreen: {fileID: 0}
 --- !u!114 &8700152958448568191
 MonoBehaviour:
   m_ObjectHideFlags: 0
