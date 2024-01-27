@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1474784654492631263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7783037107498393189}
+  - component: {fileID: 7020811890611845448}
+  m_Layer: 0
+  m_Name: Hook Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7783037107498393189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474784654492631263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.25, y: 1.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8252266668644812988}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7020811890611845448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474784654492631263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fc58fa08b01764498765d269a1be44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 6
+  damageData:
+    damage: 1
+    targetTag: Player
+  hookPrefab: {fileID: 5545204002065646655, guid: 9081f491343ea5b4fac116c44e3cb256, type: 3}
+  bassMouth: {fileID: 7783037107498393189}
+  heightOffset: 2
 --- !u!1 &3049464374412600153
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +319,7 @@ Transform:
   - {fileID: 8252266670062845060}
   - {fileID: 2098457435563748949}
   - {fileID: 3036039900255726015}
+  - {fileID: 7783037107498393189}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -337,6 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attacks:
   - {fileID: 1309155960648514152}
+  - {fileID: 7020811890611845448}
   - {fileID: 1353351981007642937}
   cooldownBetweenAttacks: 5
   valve: {fileID: 0}

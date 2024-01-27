@@ -45,7 +45,7 @@ public class HealthComponent : MonoBehaviour {
 		}
 	}
 
-	public void TakeDamge(int damage) {
+	public void TakeDamage(int damage) {
 		if (health <= 0 || invincibility > 0) return;
 		health = Mathf.Max(health - damage, 0);
 		invincibility = invincibilityDuration;
