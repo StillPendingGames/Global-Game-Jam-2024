@@ -82,7 +82,7 @@ public class PhysicsProjectile : MonoBehaviour
 
         if (other.collider.gameObject.TryGetComponent(out HealthComponent health)) 
         {
-            health.TakeDamge(data.damage);
+            health.TakeDamage(data.damage);
             // SimpleObjectPool.Despawn(gameObject);
         }
     }
