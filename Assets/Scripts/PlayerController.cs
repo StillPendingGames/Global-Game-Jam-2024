@@ -78,6 +78,6 @@ public class PlayerController : MonoBehaviour
         // TODO: Bring up Death screen UI and play death animation
 
         // For now just reload the player back into the main scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
