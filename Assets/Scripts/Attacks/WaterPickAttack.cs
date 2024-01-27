@@ -38,7 +38,6 @@ public class WaterPickAttack : MonoBehaviour
     public IEnumerator UpdateAttack() 
     {
         while (true) {
-            // Debug.Log(">> Spawning Water Particle");
             GameObject obj = SimpleObjectPool.Spawn(m_waterPrefab, m_originPoint.position, waterContainer);
 
             if (obj.TryGetComponent(out PhysicsProjectile projectile)) 
