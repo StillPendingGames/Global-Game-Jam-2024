@@ -5,6 +5,8 @@ using UnityEngine;
 public class WaterKillTest : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject waterFeedbackParticle;
+
     void Start()
     {
         
@@ -16,13 +18,18 @@ public class WaterKillTest : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "water")
         {
+            
+            GameObject g = Instantiate(waterFeedbackParticle, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(collision.gameObject);
+
+           
         }
     }
+
 
 
 
