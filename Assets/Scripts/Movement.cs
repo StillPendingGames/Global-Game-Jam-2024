@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
 
     private float horizontal;
     private bool isFacingRight = true;
+    public bool GetFacingRight() => isFacingRight;
 
     private void FixedUpdate()
     {
@@ -28,15 +29,19 @@ public class Movement : MonoBehaviour
 
     private void Flip()
     {
+        Vector3 newScale = transform.localScale;
         if(isFacingRight && horizontal < 0f)
         {
             isFacingRight = false;
+            newScale.x = -1;
         }
         else if (!isFacingRight && horizontal > 0f)
         {
             isFacingRight = true;
+            newScale.x = 1;
         }
-        spriteRenderer.flipX = !isFacingRight;
+        transform.localScale = newScale;
+        //spriteRenderer.flipX = !isFacingRight;
     }
 
     public void SetHorizontal(float givenHorizontal)

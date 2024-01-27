@@ -1093,6 +1093,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!4 &1502680119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 319333917831612473, guid: 83899762fd804cf4a83fa6363f823e33, type: 3}
+  m_PrefabInstance: {fileID: 7984328487189916384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1683671444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5564764839039219012, guid: 11edb028ba28ebc42bf04731b7ada648, type: 3}
@@ -1577,6 +1582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8855441353110604718, guid: 83899762fd804cf4a83fa6363f823e33, type: 3}
+      propertyPath: shootTransform
+      value: 
+      objectReference: {fileID: 1502680119}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83899762fd804cf4a83fa6363f823e33, type: 3}
 --- !u!1001 &8252266669329904462

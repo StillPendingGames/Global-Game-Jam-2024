@@ -614,6 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 4190085623093432029}
+  movement: {fileID: 7984328487021927108}
 --- !u!114 &1577011187878351375
 MonoBehaviour:
   m_ObjectHideFlags: 0
