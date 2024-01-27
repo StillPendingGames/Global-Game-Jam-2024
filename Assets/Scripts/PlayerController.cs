@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Movement playerMovement;
     [SerializeField] private Aiming aimingScript;
     [SerializeField] private WaterPickAttack playerAttack;
+    [SerializeField] private GameObject lossScreen;
+
     private PlayerInput playerInputActions;
 
     private void OnEnable()
@@ -78,6 +80,6 @@ public class PlayerController : MonoBehaviour
         // TODO: Bring up Death screen UI and play death animation
 
         // For now just reload the player back into the main scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        lossScreen.SetActive(true);
     }
 }
