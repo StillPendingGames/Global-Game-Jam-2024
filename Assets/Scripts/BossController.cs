@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip laughTransitionAnimation;
     [SerializeField] private Collider2D teethCollider;
+    [SerializeField] private HealthComponent healthComponent;
     [SerializeField] private GameObject winScreen;
     public static BossController Instance;
     private IAttack currentAttack;
@@ -36,12 +37,11 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
-        if (TryGetComponent(out HealthComponent health)) 
-        {
-            health.OnDeath += OnDeath;
-        }
+
+        healthComponent.OnDeath += OnDeath;
         StartFight();
         valve.SetActive(false);
+        teethCollider.enabled = false;
     }
 
     public void StartFight()
@@ -89,9 +89,13 @@ public class BossController : MonoBehaviour
 
     public void StopLaughing()
     {
-        teethCollider.enabled = false;
-        animator.Play("BossEndLaugh");
-        laughing = false;
+        if (laughing)
+        {
+            teethCollider.enabled = false;
+            animator.Play("BossEndLaugh");
+            laughing = false;
+            Debug.Log("Laughing Ended");
+        }
     }
 
     private void OnDeath(object sender, System.EventArgs args)

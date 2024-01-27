@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7020811890611845448}
   m_Layer: 0
   m_Name: Hook Attack
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 1353351981007642937}
   m_Layer: 0
   m_Name: Fin Slam Attack
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 6722417332748406303}
   m_Layer: 0
   m_Name: Drop Spawn Point
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,7 +295,6 @@ GameObject:
   - component: {fileID: 8252266668644812988}
   - component: {fileID: 8252266668644812991}
   - component: {fileID: 3320772687621595540}
-  - component: {fileID: 8700152958448568191}
   - component: {fileID: 1321985642}
   m_Layer: 0
   m_Name: Boss
@@ -398,21 +397,8 @@ MonoBehaviour:
   animator: {fileID: 1321985642}
   laughTransitionAnimation: {fileID: 7400000, guid: 3f3f057872f518440bd9b5b80670ca1e, type: 2}
   teethCollider: {fileID: 8252266670062845061}
+  healthComponent: {fileID: 2134310575}
   winScreen: {fileID: 0}
---- !u!114 &8700152958448568191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252266668644812990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd3769c9885acf6458cde305e2b3c441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  invincibilityDuration: 1
 --- !u!95 &1321985642
 Animator:
   serializedVersion: 5
@@ -445,6 +431,7 @@ GameObject:
   - component: {fileID: 8252266670062845060}
   - component: {fileID: 8252266670062845058}
   - component: {fileID: 8252266670062845061}
+  - component: {fileID: 2134310575}
   m_Layer: 0
   m_Name: Teeth
   m_TagString: Enemy
@@ -460,8 +447,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8252266670062845063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.8, y: -0.28, z: 0}
-  m_LocalScale: {x: 5.0296, y: 2.2223, z: 1}
+  m_LocalPosition: {x: -2.58, y: -1.39, z: 0}
+  m_LocalScale: {x: 5.66, y: 1.66, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8252266668644812988}
@@ -505,10 +492,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1189453665
+  m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.06320761, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -545,3 +532,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2134310575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252266670062845063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3769c9885acf6458cde305e2b3c441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  invincibilityDuration: 0.2

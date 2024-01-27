@@ -9,7 +9,7 @@ public class PhysicsProjectileData {
     public int damage = 1;
     public float force = 700;
     public float maxLifetime = 6;
-    public string targetTag = "Boss";
+    public string targetTag = "Enemy";
 }
 
 public class PhysicsProjectile : MonoBehaviour
@@ -66,7 +66,17 @@ public class PhysicsProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if (other.collider.gameObject.tag == "KillBox") 
+        CollisionCheck(other.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        CollisionCheck(other.gameObject);
+    }
+
+    private void CollisionCheck(GameObject givenObject)
+    {
+        if (givenObject.tag == "KillBox") 
         {
             SimpleObjectPool.Despawn(gameObject);
             return;
@@ -75,12 +85,12 @@ public class PhysicsProjectile : MonoBehaviour
         // {
         //     // Disable Damage when after water hits the ground potentially
         // }
-        else if (other.collider.gameObject.tag != data.targetTag) 
+        else if (givenObject.tag != data.targetTag) 
         {
             return;
         }
 
-        if (other.collider.gameObject.TryGetComponent(out HealthComponent health)) 
+        if (givenObject.TryGetComponent(out HealthComponent health)) 
         {
             health.TakeDamage(data.damage);
             // SimpleObjectPool.Despawn(gameObject);
