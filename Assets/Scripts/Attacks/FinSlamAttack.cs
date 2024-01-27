@@ -38,6 +38,7 @@ public class FinSlamAttack : IAttack
         if (m_coroutine == null) return;
         StopCoroutine(m_coroutine);
         m_coroutine = null;
+        BossController.Instance.StopLaughing();
     }
 
     public IEnumerator UpdateAttack()

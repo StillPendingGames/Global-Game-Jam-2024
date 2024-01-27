@@ -6,6 +6,7 @@ TagManager:
   tags:
   - water
   - Enemy
+  - KillBox
   layers:
   - Default
   - TransparentFX

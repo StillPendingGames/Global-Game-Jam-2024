@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 6013193933852354855}
   - component: {fileID: 6722417332748406303}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Drop Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,6 +342,9 @@ MonoBehaviour:
   valve: {fileID: 0}
   valveTargetRotation: {x: 0, y: 0, z: 55}
   valveRotationSpeed: 6
+  animator: {fileID: 1321985642}
+  laughTransitionAnimation: {fileID: 7400000, guid: 3f3f057872f518440bd9b5b80670ca1e, type: 2}
+  teethCollider: {fileID: 8252266670062845061}
   winScreen: {fileID: 0}
 --- !u!114 &8700152958448568191
 MonoBehaviour:

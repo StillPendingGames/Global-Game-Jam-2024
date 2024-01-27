@@ -9,6 +9,9 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject valve;
     [SerializeField] private Vector3 valveTargetRotation = new Vector3(0f, 0f, 45f);
     [SerializeField] private float valveRotationSpeed = 1.0f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AnimationClip laughTransitionAnimation;
+    [SerializeField] private Collider2D teethCollider;
     [SerializeField] private GameObject winScreen;
     public static BossController Instance;
     private IAttack currentAttack;
@@ -69,10 +72,26 @@ public class BossController : MonoBehaviour
         if (!laughing)
         {
             laughing = true;
+            teethCollider.enabled = false;
             StartCoroutine(HideValveCo());
-            Debug.Log("Activating Laugh Gas");            
+            Debug.Log("Activating Laugh Gas");
+            StartCoroutine(Laughing());
         }
 
+    }
+
+    private IEnumerator Laughing()
+    {
+        animator.Play("BossStartLaugh");
+        yield return new WaitForSeconds(laughTransitionAnimation.length);
+        teethCollider.enabled = true;
+    }
+
+    public void StopLaughing()
+    {
+        teethCollider.enabled = false;
+        animator.Play("BossEndLaugh");
+        laughing = false;
     }
 
     private void OnDeath(object sender, System.EventArgs args)
