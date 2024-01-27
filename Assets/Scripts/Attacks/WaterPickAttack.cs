@@ -43,7 +43,7 @@ public class WaterPickAttack : MonoBehaviour
 
             if (obj.TryGetComponent(out PhysicsProjectile projectile)) 
             {
-                Vector3 direction = Vector3.Normalize(m_originPoint.position - transform.position);
+                Vector3 direction = Vector3.Normalize(m_originPoint.right);
                 projectile.SetupProjectile(m_projectileData, direction);
             }
             yield return new WaitForSeconds(m_fireRate);
