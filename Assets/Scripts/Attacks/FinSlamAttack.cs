@@ -57,6 +57,8 @@ public class FinSlamAttack : IAttack
         cameraTransform.position = startPosition;
         base.StartAttack();
 
+        StartCoroutine(BossController.Instance.ShowValve());
+
         while (m_coroutine != null)
         {   
             Vector3 spawnPos = dropBase.position;
@@ -69,4 +71,5 @@ public class FinSlamAttack : IAttack
             yield return new WaitForSeconds(fireRate);
         }
     }
+
 }

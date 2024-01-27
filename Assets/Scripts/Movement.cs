@@ -47,7 +47,6 @@ public class Movement : MonoBehaviour
         {
             if(horizontal != 0)
             {
-                Debug.Log("Set Running True");
                 animator.SetBool("Running", true);
             }
             else
