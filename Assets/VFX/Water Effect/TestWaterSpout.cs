@@ -6,6 +6,8 @@ public class TestWaterSpout : MonoBehaviour
 {
     public GameObject waterParticle;
     public GameObject originPoint;
+   
+
     public float fireRate;
     public float thrust;
     // Start is called before the first frame update
