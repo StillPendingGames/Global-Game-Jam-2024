@@ -405,7 +405,7 @@ MonoBehaviour:
   valveRotationSpeed: 6
   gasRoomObject: {fileID: 0}
   gasMaterial: {fileID: 2100000, guid: fe9007c96f8e74849ae7c00b05ec4664, type: 2}
-  gasFillSpeed: 0.12
+  gasFillSpeed: 0.14
   gasMaxAlpha: 1.4
   gasShootObject: {fileID: 0}
   animator: {fileID: 1321985642}
@@ -562,4 +562,3 @@ MonoBehaviour:
   invincibilityDuration: 0.2
   renderers:
   - {fileID: 8252266668644812991}
-  alphaFlash: 0.5
