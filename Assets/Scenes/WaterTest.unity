@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 104856451}
   - component: {fileID: 104856450}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: WaterFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104856449}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -465,7 +465,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.39
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1157,7 +1157,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 250
+        scalar: 50
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5620,7 +5620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &897179140
 ParticleSystemRenderer:
   serializedVersion: 6
