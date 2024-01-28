@@ -74,7 +74,7 @@ MonoBehaviour:
     loop: 1
     isSong: 1
   - name: Laugh
-    clip: {fileID: 8300000, guid: 104a2c13db44d894c829a056e231b1db, type: 3}
+    clip: {fileID: 8300000, guid: fb042cb92e6da0748a62e0d4cfed73aa, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
