@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FogMaterial
+  m_Name: FogMaterial Game Version
   m_Shader: {fileID: -6465566751694194690, guid: e7bcd869d5dbe664a9c034a5d5470e64, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -42,15 +42,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.5
-    - _AlphaOne: 0.5
+    - _AlphaOne: 0
     - _AlphaThreshold: 0
-    - _ClipThreshold: 0.5
+    - _AlphaTwo: 0.52
+    - _ClipThreshold: 0
     - _FogSize: 12
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Threshold: 0
     m_Colors:
-    - _FogColor: {r: 1, g: 0.94576, b: 0.0990566, a: 0}
+    - _FogColor: {r: 0.8180066, g: 1, b: 0.71132076, a: 1}
     - _FogSpeed: {r: 0.2, g: 0, b: 0, a: 0}
     - _FogSpeed2: {r: 0.05, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -615,6 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 4190085623093432029}
   movement: {fileID: 7984328487021927108}
+  shootTransform: {fileID: 319333917831612473}
 --- !u!114 &1577011187878351375
 MonoBehaviour:
   m_ObjectHideFlags: 0

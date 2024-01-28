@@ -387,13 +387,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacks:
-  - {fileID: 1309155960648514152}
-  - {fileID: 7020811890611845448}
   - {fileID: 1353351981007642937}
   cooldownBetweenAttacks: 5
   valve: {fileID: 0}
   valveTargetRotation: {x: 0, y: 0, z: 55}
   valveRotationSpeed: 6
+  gasRoomObject: {fileID: 0}
+  gasMaterial: {fileID: 2100000, guid: fe9007c96f8e74849ae7c00b05ec4664, type: 2}
+  gasFillSpeed: 0.08
+  gasMaxAlpha: 0.5
+  gasShootObject: {fileID: 0}
   animator: {fileID: 1321985642}
   laughTransitionAnimation: {fileID: 7400000, guid: 3f3f057872f518440bd9b5b80670ca1e, type: 2}
   teethCollider: {fileID: 8252266670062845061}

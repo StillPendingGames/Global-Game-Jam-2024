@@ -30,7 +30,7 @@ public class Aiming : MonoBehaviour
             newRot.y = 0;
         }
         float angleRad = (Mathf.Atan2(inputDirection.y, inputDirection.x)) * Mathf.Rad2Deg;
-        float quantizedAngle = Mathf.Round(angleRad / 45.0f) * 45.0f;
+        //float quantizedAngle = Mathf.Round(angleRad / 45.0f) * 45.0f;
         objectToRotate.rotation = Quaternion.Euler(0, 0, angleRad);
         shootTransform.localEulerAngles = newRot;
     }

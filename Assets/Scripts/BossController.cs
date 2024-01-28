@@ -9,6 +9,11 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject valve;
     [SerializeField] private Vector3 valveTargetRotation = new Vector3(0f, 0f, 45f);
     [SerializeField] private float valveRotationSpeed = 1.0f;
+    [SerializeField] private GameObject gasRoomObject;
+    [SerializeField] private Material gasMaterial;
+    [SerializeField] private float  gasFillSpeed;
+    [SerializeField] private float  gasMaxAlpha;
+    [SerializeField] private GameObject gasShootObject;
     [SerializeField] private Animator animator;
     [SerializeField] private AnimationClip laughTransitionAnimation;
     [SerializeField] private Collider2D teethCollider;
@@ -42,6 +47,8 @@ public class BossController : MonoBehaviour
         StartFight();
         valve.SetActive(false);
         teethCollider.enabled = false;
+        gasRoomObject.SetActive(false);
+        gasShootObject.SetActive(false);
     }
 
     public void StartFight()
@@ -71,11 +78,13 @@ public class BossController : MonoBehaviour
         //currentAttack.StopAttack();
         if (!laughing)
         {
+            Debug.Log("Activating Laugh Gas");
             laughing = true;
             teethCollider.enabled = false;
             StartCoroutine(HideValveCo());
-            Debug.Log("Activating Laugh Gas");
+            gasShootObject.SetActive(true);
             StartCoroutine(Laughing());
+            StartCoroutine(ShowRoomGas());
         }
 
     }
@@ -93,6 +102,8 @@ public class BossController : MonoBehaviour
         {
             teethCollider.enabled = false;
             animator.Play("BossEndLaugh");
+            gasShootObject.SetActive(false);
+            StartCoroutine(FadeRoomGas());
             laughing = false;
             Debug.Log("Laughing Ended");
         }
@@ -116,6 +127,36 @@ public class BossController : MonoBehaviour
             yield return null;
         }
         valve.GetComponent<Collider2D>().enabled = true;
+    }
+
+    public IEnumerator ShowRoomGas()
+    {
+        float gasAmount = 0;
+        gasMaterial.SetFloat("_AlphaOne", gasAmount);
+        gasRoomObject.SetActive(true);
+
+        yield return new WaitForSeconds(0.2f);
+
+        while(gasAmount < gasMaxAlpha - 0.02f)
+        {
+            gasAmount = Mathf.Lerp(gasAmount, gasMaxAlpha, gasFillSpeed * Time.fixedDeltaTime);
+            gasMaterial.SetFloat("_AlphaOne", gasAmount);
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeRoomGas()
+    {
+        float gasAmount = gasMaxAlpha;
+        while(gasAmount > 0.02f)
+        {
+            gasAmount = Mathf.Lerp(gasAmount, 0, gasFillSpeed * Time.fixedDeltaTime);
+            gasMaterial.SetFloat("_AlphaOne", gasAmount);
+            yield return null;
+        }
+        gasAmount = 0;
+        gasMaterial.SetFloat("_AlphaOne", gasAmount);
+        gasRoomObject.SetActive(false);
     }
 
     public void HideValve()
