@@ -1793,7 +1793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007373600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.09, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2129,6 +2129,14 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 705156341}
+    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: gasMaxAlpha
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: gasFillSpeed
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: gasRoomObject
       value: 

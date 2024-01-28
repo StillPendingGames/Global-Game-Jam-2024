@@ -42,14 +42,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaOne: 0.1390986
+    - _AlphaOne: 0
     - _AlphaThreshold: 0
     - _AlphaTwo: 0.52
     - _ClipThreshold: 0
     - _FogSize: 69.32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Threshold: 0.2
+    - _Threshold: 0
     m_Colors:
     - _FogColor: {r: 0.9326715, g: 0.9811321, b: 0.8746885, a: 1}
     - _FogSpeed: {r: 0.2, g: 0, b: 0, a: 0}
