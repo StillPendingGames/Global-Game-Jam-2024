@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 6630032684861506940}
+  hitParticle: {fileID: 8492059397082142300, guid: 24ba794f7a35cab4187df0d27ee9b302, type: 3}

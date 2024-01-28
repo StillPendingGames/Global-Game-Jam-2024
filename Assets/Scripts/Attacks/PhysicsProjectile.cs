@@ -15,6 +15,7 @@ public class PhysicsProjectileData {
 public class PhysicsProjectile : MonoBehaviour
 {
     [SerializeField] private new SpriteRenderer renderer;
+    [SerializeField] private GameObject hitParticle;
     private PhysicsProjectileData data;
     private float lifetime = 0;
     private Vector3 initalSize; 
@@ -95,6 +96,15 @@ public class PhysicsProjectile : MonoBehaviour
             health.TakeDamage(data.damage);
             AudioManager.Instance.Play("Water Pick Hit");
             SimpleObjectPool.Despawn(gameObject);
+            GameObject feedback = SimpleObjectPool.Spawn(hitParticle, transform.position, transform.rotation);
+            feedback.GetComponent<MonoBehaviour>().StartCoroutine(DelayDespawn(feedback, 3));
         }
+    }
+
+    private IEnumerator DelayDespawn(GameObject obj, float delay = 1f) 
+    {
+        if (delay < 1) delay = 1;
+        yield return new WaitForSeconds(delay);
+        SimpleObjectPool.Despawn(obj);
     }
 }
