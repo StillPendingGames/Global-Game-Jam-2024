@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] private PlayerController player;
     [SerializeField] private IAttack[] attacks;
     [SerializeField] protected float cooldownBetweenAttacks;
     [SerializeField] private GameObject valve;
@@ -118,6 +119,7 @@ public class BossController : MonoBehaviour
         AudioManager.Instance.StopAllSounds();
         AudioManager.Instance.Play("Fresh and Shiny");
         Time.timeScale = 0;
+        player.DisableInput();
         Debug.Log("Boss Died");
     }
 

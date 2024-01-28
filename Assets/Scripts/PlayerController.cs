@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        DisableInput();
+    }
+
+    public void DisableInput()
+    {
         playerInputActions.Movement.Disable();
         playerInputActions.Movement.Jump.started -= Jump;
         playerInputActions.Movement.Jump.canceled -= StopJump;
@@ -88,5 +93,6 @@ public class PlayerController : MonoBehaviour
         AudioManager.Instance.Play("Blue Water Blues - Tutorial");
         lossScreen.SetActive(true);
         Time.timeScale = 0;
+        DisableInput();
     }
 }
