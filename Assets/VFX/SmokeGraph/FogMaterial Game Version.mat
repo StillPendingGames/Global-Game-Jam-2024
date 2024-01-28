@@ -42,7 +42,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaOne: 0.15634689
+    - _AlphaOne: 0.1390986
     - _AlphaThreshold: 0
     - _AlphaTwo: 0.52
     - _ClipThreshold: 0
