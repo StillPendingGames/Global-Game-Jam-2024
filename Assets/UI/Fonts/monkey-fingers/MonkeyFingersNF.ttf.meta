@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ba366cfb61bc34749948a70f6d3b3fe2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Monkey Fingers NF
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c92b78d4d4c7bf547b3811b5268405c4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

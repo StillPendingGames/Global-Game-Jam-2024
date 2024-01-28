@@ -1158,6 +1158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gass Room Visual Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 3027584043838137333, guid: 8c31fc3892bb6cb40958e61b17e2b329, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c31fc3892bb6cb40958e61b17e2b329, type: 3}
 --- !u!1 &1683671444 stripped
