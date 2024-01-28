@@ -82,9 +82,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnDeath(object sender, System.EventArgs args) {
-        // TODO: Bring up Death screen UI and play death animation
-
-        // For now just reload the player back into the main scene
+        AudioManager.Instance.StopAllSounds();
+        AudioManager.Instance.Play("Blue Water Blues - Tutorial");
         lossScreen.SetActive(true);
         Time.timeScale = 0;
     }

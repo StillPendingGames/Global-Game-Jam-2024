@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void LoadGameScene()
+    private void Start()
     {
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        AudioManager.Instance.StopCurrentSongPlayNew("Fresh and Shiny");
     }
 }

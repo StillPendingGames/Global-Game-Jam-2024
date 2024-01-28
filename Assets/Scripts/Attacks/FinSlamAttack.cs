@@ -50,6 +50,7 @@ public class FinSlamAttack : IAttack
         float elapsedTime = 0f;
 
         yield return new WaitForSeconds(finSlamAnimation.length);
+        AudioManager.Instance.Play("Fish Slap");
 
         while (elapsedTime < shakeDuration)
         {

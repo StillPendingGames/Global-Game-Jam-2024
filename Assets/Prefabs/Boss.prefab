@@ -102,7 +102,7 @@ MonoBehaviour:
   animator: {fileID: 1321985642}
   cameraTransform: {fileID: 0}
   dropBase: {fileID: 6013193933852354855}
-  shakeDuration: 5
+  shakeDuration: 4
   shakeCurve:
     serializedVersion: 2
     m_Curve:

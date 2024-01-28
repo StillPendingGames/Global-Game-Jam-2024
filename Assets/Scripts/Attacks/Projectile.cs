@@ -13,6 +13,7 @@ public class ProjectileData {
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private string impactSound;
     private ProjectileData m_data;
     private Vector3 m_direction;
 
@@ -43,6 +44,10 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.TryGetComponent(out HealthComponent health)) 
         {
             health.TakeDamage(m_data.damage);
+            if (impactSound != null && impactSound.Length > 0)
+            {
+                AudioManager.Instance.Play("Note Impact");
+            }
             SimpleObjectPool.Despawn(gameObject);
         }
     }

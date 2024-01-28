@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &255603335796340234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255603335796340228}
+  - component: {fileID: 255603335796340235}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &255603335796340228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255603335796340234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255603335796340235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255603335796340234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9098a07b174ed964ea614a3d28fd320f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Blue Water Blues - Bahs
+    clip: {fileID: 8300000, guid: 51579ef38d67dea468dc1b21739c3a81, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 1
+  - name: Blue Water Blues - Trumpet
+    clip: {fileID: 8300000, guid: 98cb41c946a757a4d8253e17cde774e0, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 1
+  - name: Blue Water Blues - Tutorial
+    clip: {fileID: 8300000, guid: e25518a773b84254fad854879ef815d6, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 1
+  - name: Fresh and Shiny
+    clip: {fileID: 8300000, guid: 64e158c3f0c8df44ab60ed7a708dcc5f, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 1
+  - name: Laugh
+    clip: {fileID: 8300000, guid: 104a2c13db44d894c829a056e231b1db, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 0
+  - name: Fish Slap
+    clip: {fileID: 8300000, guid: 1219ee08066f1ac4e9bd3085f40ed20d, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isSong: 0
+  - name: Note Floating
+    clip: {fileID: 8300000, guid: 778a93f329fb9d948b6c4b172d932009, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 0
+  - name: Note Impact
+    clip: {fileID: 8300000, guid: 3e424a5cb56602c4cada92a44deaa4ca, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isSong: 0
+  - name: Valve Appears
+    clip: {fileID: 8300000, guid: f7501c11dc25ca24dab990bf56845399, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isSong: 0
+  - name: Valve Hit
+    clip: {fileID: 8300000, guid: 4038cf1401ecc134b812ccc68c46894b, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isSong: 0
+  - name: Water Pick Loop
+    clip: {fileID: 8300000, guid: e0b65505869a04b4ba11a115a9cc4078, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 0
+  - name: Water Pick Hit
+    clip: {fileID: 8300000, guid: 5203a1c6ac882f142bfd1c6c28739285, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    isSong: 0
+  - name: Water Pick Hit Loop
+    clip: {fileID: 8300000, guid: f8388fc3f925ed14e8da358862549f15, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+    isSong: 0

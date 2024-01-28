@@ -53,7 +53,8 @@ public class BossController : MonoBehaviour
 
     public void StartFight()
     {
-       StartCoroutine(Cooldown(3));
+        StartCoroutine(Cooldown(3));
+        AudioManager.Instance.StopCurrentSongPlayNew("Blue Water Blues - Bahs");
     }
 
     private void CurrentAttackEnded(object sender, System.EventArgs e)
@@ -85,6 +86,7 @@ public class BossController : MonoBehaviour
             gasShootObject.SetActive(true);
             StartCoroutine(Laughing());
             StartCoroutine(ShowRoomGas());
+            AudioManager.Instance.Play("Laugh");
         }
 
     }
@@ -104,6 +106,7 @@ public class BossController : MonoBehaviour
             animator.Play("BossEndLaughPlaque");
             gasShootObject.SetActive(false);
             StartCoroutine(FadeRoomGas());
+            AudioManager.Instance.Stop("Laugh");
             laughing = false;
             Debug.Log("Laughing Ended");
         }
@@ -112,12 +115,15 @@ public class BossController : MonoBehaviour
     private void OnDeath(object sender, System.EventArgs args)
     {
         winScreen.SetActive(true);
+        AudioManager.Instance.StopAllSounds();
+        AudioManager.Instance.Play("Fresh and Shiny");
         Time.timeScale = 0;
         Debug.Log("Boss Died");
     }
 
     public IEnumerator ShowValve()
     {
+        AudioManager.Instance.Play("Valve Appears");
         valve.GetComponent<Collider2D>().enabled = false;
         valve.SetActive(true);
         Quaternion targetQuaternion = Quaternion.Euler(valveTargetRotation);
@@ -166,6 +172,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator HideValveCo()
     {
+        AudioManager.Instance.Play("Valve Hit");
         valve.GetComponent<Collider2D>().enabled = false;
         Vector3 oppositeRot = valveTargetRotation;
         oppositeRot.z = 0;
