@@ -16,7 +16,7 @@ public class HealthComponent : MonoBehaviour {
 	[SerializeField][Range(3, 100)] private int maxHealth = 10;
 	[SerializeField][Range(0, 5)] private float invincibilityDuration = 1f;
 
-	[SerializeField] private new List<SpriteRenderer> renderers;
+	[SerializeField] private List<SpriteRenderer> renderers;
 	private float alphaFlash = 0.5f;
 	private float invincibility = 0;
 
