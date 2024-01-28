@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class UI_Utilities : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     public void QuitGame()
     {
         Application.Quit();

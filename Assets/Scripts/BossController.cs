@@ -112,6 +112,7 @@ public class BossController : MonoBehaviour
     private void OnDeath(object sender, System.EventArgs args)
     {
         winScreen.SetActive(true);
+        Time.timeScale = 0;
         Debug.Log("Boss Died");
     }
 

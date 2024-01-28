@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput playerInputActions;
 
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     private void OnEnable()
     {
         playerInputActions = new PlayerInput();
@@ -81,5 +86,6 @@ public class PlayerController : MonoBehaviour
 
         // For now just reload the player back into the main scene
         lossScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }
