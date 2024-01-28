@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
         playerInputActions.Movement.Jump.canceled += StopJump;
         playerInputActions.Movement.AimViaMouse.performed += AimWithMouse;
         playerInputActions.Movement.AimViaDirection.performed += AimWithKeyboardOrController;
-
-
         playerInputActions.Movement.Attack.started += StartAttack;
         playerInputActions.Movement.Attack.canceled += StopAttack;
 
@@ -44,6 +42,8 @@ public class PlayerController : MonoBehaviour
         playerInputActions.Movement.Jump.canceled -= StopJump;
         playerInputActions.Movement.AimViaMouse.performed -= AimWithMouse;
         playerInputActions.Movement.AimViaDirection.performed -= AimWithKeyboardOrController;
+        playerInputActions.Movement.Attack.started -= StartAttack;
+        playerInputActions.Movement.Attack.canceled -= StopAttack;
     }
 
     private void Jump(InputAction.CallbackContext context)
@@ -69,11 +69,13 @@ public class PlayerController : MonoBehaviour
     private void StartAttack(InputAction.CallbackContext context)
     {
         playerAttack.StartAttack();
+        AudioManager.Instance.Play("Water Pick Loop");
     }
 
     private void StopAttack(InputAction.CallbackContext context)
     {
         playerAttack.StopAttack();
+        AudioManager.Instance.Stop("Water Pick Loop");
     }
 
     private void Update()

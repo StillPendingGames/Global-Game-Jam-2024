@@ -2134,10 +2134,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
-      propertyPath: shakeDuration
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1353351981007642937, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 519420032}
