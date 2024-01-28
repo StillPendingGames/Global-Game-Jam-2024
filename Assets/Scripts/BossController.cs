@@ -91,7 +91,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Laughing()
     {
-        animator.Play("BossStartLaugh");
+        animator.Play("BossStartLaughPlaque");
         yield return new WaitForSeconds(laughTransitionAnimation.length);
         teethCollider.enabled = true;
     }
