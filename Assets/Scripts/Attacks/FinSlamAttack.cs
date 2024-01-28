@@ -6,6 +6,7 @@ using UnityEngine.Assertions.Comparers;
 
 public class FinSlamAttack : IAttack
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform dropBase;
     [SerializeField] private float shakeDuration = 3;
@@ -13,37 +14,37 @@ public class FinSlamAttack : IAttack
     [SerializeField] private ProjectileData projectileData;
     [SerializeField] private GameObject[] fallingObjPrefabs;
     [SerializeField][Range(0.01f, 1f)] private float fireRate = 0.2f;
-    private IEnumerator m_coroutine = null;
+    private IEnumerator coroutine = null;
 
     private void Awake()
     {
+        Transform parent = new GameObject("Falling Objects").transform;
         foreach (GameObject item in fallingObjPrefabs)
         {
-            SimpleObjectPool.Preload(item, 8);
+            SimpleObjectPool.Preload(item, 8, parent);
         }
     }
 
     public override void StartAttack()
     {
-        if (m_coroutine != null) {
-            return;
-        }
-        m_coroutine = UpdateAttack();
-        StartCoroutine(m_coroutine);
+        if (coroutine != null) return;
+
+        animator.Play("Smack");
+        coroutine = UpdateAttack();
+        StartCoroutine(coroutine);
     }
 
     public override void StopAttack()
     {
         base.StopAttack();
-        if (m_coroutine == null) return;
-        StopCoroutine(m_coroutine);
-        m_coroutine = null;
+        if (coroutine == null) return;
+        StopCoroutine(coroutine);
+        coroutine = null;
         BossController.Instance.StopLaughing();
     }
 
     public IEnumerator UpdateAttack()
     {
-
         Vector3 startPosition = cameraTransform.position;
         float elapsedTime = 0f;
 
@@ -60,7 +61,7 @@ public class FinSlamAttack : IAttack
 
         StartCoroutine(BossController.Instance.ShowValve());
 
-        while (m_coroutine != null)
+        while (coroutine != null)
         {   
             Vector3 spawnPos = dropBase.position;
             spawnPos.x = dropBase.position.x + Random.Range(-8.36f, 8.36f);

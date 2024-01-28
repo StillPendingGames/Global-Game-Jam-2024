@@ -11,8 +11,9 @@ public class MusicNoteAttack : IAttack
 
     private void Awake()
     {
-        // preload water sprites
-        SimpleObjectPool.Preload(m_notePrefab, 50);
+        Transform parent = new GameObject("Music Notes").transform;
+        // preload music notes sprites
+        SimpleObjectPool.Preload(m_notePrefab, 30, parent);
     }
 
     public override void StartAttack()

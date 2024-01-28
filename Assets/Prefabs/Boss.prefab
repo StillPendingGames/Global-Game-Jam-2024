@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 12
+  animator: {fileID: 1321985642}
   cameraTransform: {fileID: 0}
   dropBase: {fileID: 6013193933852354855}
   shakeDuration: 5
@@ -150,6 +151,9 @@ MonoBehaviour:
     targetTag: Player
   fallingObjPrefabs:
   - {fileID: 1868027877855192418, guid: 6fd3cee2c2c5363448a0422ce543b3da, type: 3}
+  - {fileID: 721560820061153197, guid: 154f60940ee13e34eb49ee7655d403a2, type: 3}
+  - {fileID: 4602260784292473758, guid: c65f53b556de855428deafa89807917e, type: 3}
+  - {fileID: 3595476467962616387, guid: 141d84111669e1e46bb49b349eaeeee6, type: 3}
   fireRate: 1
 --- !u!1 &4860927863145159779
 GameObject:

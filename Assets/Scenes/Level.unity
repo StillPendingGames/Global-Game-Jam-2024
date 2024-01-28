@@ -951,6 +951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinLossScreens
       objectReference: {fileID: 0}
+    - target: {fileID: 7038761319826633255, guid: 11edb028ba28ebc42bf04731b7ada648, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7396939634312427136, guid: 11edb028ba28ebc42bf04731b7ada648, type: 3}
       propertyPath: m_Pivot.x
       value: 0
