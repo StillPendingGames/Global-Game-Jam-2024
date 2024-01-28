@@ -12,7 +12,7 @@ public class TutorialTarget : MonoBehaviour
     {
         if (collision.gameObject.tag == "water")
         {
-            Destroy(collision.gameObject);
+            SimpleObjectPool.Despawn(collision.gameObject);
             health--;
 
             if (health <= 0)

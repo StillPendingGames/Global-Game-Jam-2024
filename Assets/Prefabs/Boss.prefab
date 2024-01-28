@@ -560,3 +560,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 80
   invincibilityDuration: 0.2
+  renderers:
+  - {fileID: 8252266668644812991}
+  alphaFlash: 0.5

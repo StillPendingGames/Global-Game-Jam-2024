@@ -629,7 +629,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  invincibilityDuration: 0.2
+  invincibilityDuration: 1
+  renderers:
+  - {fileID: 4712456408206844254}
+  - {fileID: 3449778514979135860}
+  - {fileID: 4890661896243234887}
 --- !u!114 &2389408435271823945
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PhysicsProjectileData {
 
 public class PhysicsProjectile : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer renderer;
+    [SerializeField] private new SpriteRenderer renderer;
     private PhysicsProjectileData data;
     private float lifetime = 0;
     private Vector3 initalSize; 
@@ -93,7 +93,7 @@ public class PhysicsProjectile : MonoBehaviour
         if (givenObject.TryGetComponent(out HealthComponent health)) 
         {
             health.TakeDamage(data.damage);
-            // SimpleObjectPool.Despawn(gameObject);
+            SimpleObjectPool.Despawn(gameObject);
         }
     }
 }
