@@ -42,16 +42,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaOne: 0.47644424
+    - _AlphaOne: 0.24914879
     - _AlphaThreshold: 0
     - _AlphaTwo: 0.52
     - _ClipThreshold: 0
-    - _FogSize: 12
+    - _FogSize: 69.32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Threshold: 0
+    - _Threshold: 0.2
     m_Colors:
-    - _FogColor: {r: 0.8180066, g: 1, b: 0.71132076, a: 1}
+    - _FogColor: {r: 0.9326715, g: 0.9811321, b: 0.8746885, a: 1}
     - _FogSpeed: {r: 0.2, g: 0, b: 0, a: 0}
     - _FogSpeed2: {r: 0.05, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1abdffc581e0c943b8db0ef772b8227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 6
+  duration: 12
   cameraTransform: {fileID: 0}
   dropBase: {fileID: 6013193933852354855}
   shakeDuration: 5
@@ -150,7 +150,7 @@ MonoBehaviour:
     targetTag: Player
   fallingObjPrefabs:
   - {fileID: 1868027877855192418, guid: 6fd3cee2c2c5363448a0422ce543b3da, type: 3}
-  fireRate: 0.8
+  fireRate: 1
 --- !u!1 &4860927863145159779
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,5 +549,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3769c9885acf6458cde305e2b3c441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 80
   invincibilityDuration: 0.2
