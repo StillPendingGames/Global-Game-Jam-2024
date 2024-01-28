@@ -93,6 +93,7 @@ public class PhysicsProjectile : MonoBehaviour
         if (givenObject.TryGetComponent(out HealthComponent health)) 
         {
             health.TakeDamage(data.damage);
+            AudioManager.Instance.Play("Water Pick Hit");
             SimpleObjectPool.Despawn(gameObject);
         }
     }
