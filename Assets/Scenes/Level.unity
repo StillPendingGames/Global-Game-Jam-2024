@@ -2214,6 +2214,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83899762fd804cf4a83fa6363f823e33, type: 3}
+--- !u!114 &7984328487189916385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7984328487021927109, guid: 83899762fd804cf4a83fa6363f823e33, type: 3}
+  m_PrefabInstance: {fileID: 7984328487189916384}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a482d30e869134cb91978d6a57c995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8252266669329904462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2229,6 +2240,10 @@ PrefabInstance:
       propertyPath: valve
       value: 
       objectReference: {fileID: 1899495996}
+    - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7984328487189916385}
     - target: {fileID: 3320772687621595540, guid: 0fa0cf8b36badcf408b7344c60d92f26, type: 3}
       propertyPath: winScreen
       value: 
