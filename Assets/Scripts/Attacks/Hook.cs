@@ -12,6 +12,7 @@ public struct HookAnimationData {
 public class Hook : MonoBehaviour
 {
     [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private Transform knot;
 
     private DamageData damageData;
     private HookAnimationData animationData;
@@ -27,7 +28,7 @@ public class Hook : MonoBehaviour
 
     public void SetupHook(HookAnimationData data) 
     {
-        lineRenderer.SetPosition(0, data.origin);
+        lineRenderer.SetPosition(0, data.origin + knot.localPosition);
         animationData = data;
         progress = 0;
         StartAnimation();
@@ -41,7 +42,7 @@ public class Hook : MonoBehaviour
             float prog = Mathf.Clamp01(progress / animationData.duration);
 
             transform.position = Vector3.Lerp(animationData.origin, animationData.destination, prog); 
-            lineRenderer.SetPosition(lineRenderer.positionCount - 1, transform.position);
+            lineRenderer.SetPosition(lineRenderer.positionCount - 1, knot.position);
 
             if (progress >= animationData.duration) 
             {

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474784654492631263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: 1.25, z: 0}
+  m_LocalPosition: {x: -7, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,7 +49,9 @@ MonoBehaviour:
     damage: 1
     targetTag: Player
   hookPrefab: {fileID: 5545204002065646655, guid: 9081f491343ea5b4fac116c44e3cb256, type: 3}
-  bassMouth: {fileID: 7783037107498393189}
+  animator: {fileID: 1321985642}
+  introHook: {fileID: 0}
+  mainHook: {fileID: 0}
   heightOffset: 2
 --- !u!1 &3049464374412600153
 GameObject:
@@ -387,9 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacks:
-  - {fileID: 1309155960648514152}
   - {fileID: 7020811890611845448}
-  - {fileID: 1353351981007642937}
   cooldownBetweenAttacks: 5
   valve: {fileID: 0}
   valveTargetRotation: {x: 0, y: 0, z: 55}

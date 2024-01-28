@@ -6,23 +6,16 @@ public class HookAttack : IAttack
 {
     [SerializeField] private DamageData damageData;
     [SerializeField] private GameObject hookPrefab;
-    [SerializeField] private Transform bassMouth;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Hook introHook;
+    [SerializeField] private Hook mainHook;
     [SerializeField] private float heightOffset = 2;
-
-    private Hook introHook;
-    private Hook mainHook;
 
     // Start is called before the first frame update
     void Awake()
     {
-        Transform parent = new GameObject("Hooks").transform;
-        GameObject introObj = SimpleObjectPool.Spawn(hookPrefab, bassMouth.position, parent);
-        introHook = introObj.GetComponent<Hook>();
-        introObj.SetActive(false);
-
-        GameObject mainObj = SimpleObjectPool.Spawn(hookPrefab, bassMouth.position, parent);
-        mainHook = mainObj.GetComponent<Hook>();
-        mainObj.SetActive(false);
+        introHook.gameObject.SetActive(false);
+        mainHook.gameObject.SetActive(false);
 
         introHook.SetDamageData(damageData);
         mainHook.SetDamageData(damageData);
@@ -30,10 +23,11 @@ public class HookAttack : IAttack
 
     public override void StartAttack() 
     {
+        animator.Play("Spit");
         float introDuration = (duration * 0.25f) * 0.5f;
 
         HookAnimationData introData = new HookAnimationData();
-        introData.origin = bassMouth.position;
+        introData.origin = transform.position;
         introData.destination = introData.origin + Vector3.left * 10;
         introData.duration = introDuration;
 
@@ -49,6 +43,7 @@ public class HookAttack : IAttack
         int sign = Random.Range(0f, 1f) > 0.5f ? 1 : -1; 
         float xOffset = 10 * sign;
 
+        mainHook.transform.localScale = new Vector3(sign, 1, 1);
         HookAnimationData mainData = new HookAnimationData();
         mainData.origin = new Vector3(xOffset + (2 * sign), -heightOffset, 0);
         mainData.destination = new Vector3(-xOffset, -heightOffset, 0);
