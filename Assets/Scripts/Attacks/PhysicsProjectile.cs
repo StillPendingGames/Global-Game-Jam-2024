@@ -14,7 +14,7 @@ public class PhysicsProjectileData {
 
 public class PhysicsProjectile : MonoBehaviour
 {
-    [SerializeField] private new SpriteRenderer renderer;
+    [SerializeField] private SpriteRenderer rendererForSprite;
     [SerializeField] private GameObject hitParticle;
     private PhysicsProjectileData data;
     private float lifetime = 0;
@@ -28,9 +28,9 @@ public class PhysicsProjectile : MonoBehaviour
         if (initalSpawn) 
         {
             initalSize = transform.localScale;
-            if (renderer == null) 
+            if (rendererForSprite == null) 
             {
-                renderer = GetComponent<SpriteRenderer>();
+                rendererForSprite = GetComponent<SpriteRenderer>();
             }
         }
         SetFade(1);
@@ -60,9 +60,9 @@ public class PhysicsProjectile : MonoBehaviour
         progress = Mathf.Clamp01(progress);
         // transform.localScale = initalSize * progress;
         
-        Color color = renderer.color;
+        Color color = rendererForSprite.color;
         color.a = progress;
-        renderer.color = color;
+        rendererForSprite.color = color;
     }
 
     private void OnCollisionEnter2D(Collision2D other) 

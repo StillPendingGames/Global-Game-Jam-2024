@@ -136,5 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6db50ee8164a64ab64038cbb3bd0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 6630032684861506940}
+  rendererForSprite: {fileID: 6630032684861506940}
   hitParticle: {fileID: 8492059397082142300, guid: 24ba794f7a35cab4187df0d27ee9b302, type: 3}
