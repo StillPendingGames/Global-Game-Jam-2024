@@ -101,7 +101,7 @@ public class BossController : MonoBehaviour
         if (laughing)
         {
             teethCollider.enabled = false;
-            animator.Play("BossEndLaugh");
+            animator.Play("BossEndLaughPlaque");
             gasShootObject.SetActive(false);
             StartCoroutine(FadeRoomGas());
             laughing = false;
@@ -111,7 +111,6 @@ public class BossController : MonoBehaviour
 
     private void OnDeath(object sender, System.EventArgs args)
     {
-        // Boss has died show complete scene
         winScreen.SetActive(true);
         Debug.Log("Boss Died");
     }

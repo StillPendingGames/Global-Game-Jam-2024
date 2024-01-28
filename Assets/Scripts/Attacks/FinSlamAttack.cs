@@ -14,6 +14,7 @@ public class FinSlamAttack : IAttack
     [SerializeField] private ProjectileData projectileData;
     [SerializeField] private GameObject[] fallingObjPrefabs;
     [SerializeField][Range(0.01f, 1f)] private float fireRate = 0.2f;
+    [SerializeField] private AnimationClip finSlamAnimation;
     private IEnumerator coroutine = null;
 
     private void Awake()
@@ -47,6 +48,8 @@ public class FinSlamAttack : IAttack
     {
         Vector3 startPosition = cameraTransform.position;
         float elapsedTime = 0f;
+
+        yield return new WaitForSeconds(finSlamAnimation.length);
 
         while (elapsedTime < shakeDuration)
         {
