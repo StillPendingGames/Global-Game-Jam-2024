@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13b11c9330039c47a35b08cf9ac0b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   attacks:
   - {fileID: 1309155960648514152}
   - {fileID: 7020811890611845448}
@@ -402,7 +403,7 @@ MonoBehaviour:
   cooldownBetweenAttacks: 5
   valve: {fileID: 0}
   valveTargetRotation: {x: 0, y: 0, z: 55}
-  valveRotationSpeed: 6
+  valveRotationSpeed: 5
   gasRoomObject: {fileID: 0}
   gasMaterial: {fileID: 2100000, guid: fe9007c96f8e74849ae7c00b05ec4664, type: 2}
   gasFillSpeed: 0.14

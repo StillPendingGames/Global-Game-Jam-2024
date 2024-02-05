@@ -40,6 +40,7 @@ public class FinSlamAttack : IAttack
         if (coroutine == null) return;
         StopCoroutine(coroutine);
         coroutine = null;
+        BossController.Instance.HideValve();
         BossController.Instance.StopLaughing();
     }
 
@@ -62,7 +63,7 @@ public class FinSlamAttack : IAttack
         cameraTransform.position = startPosition;
         base.StartAttack();
 
-        StartCoroutine(BossController.Instance.ShowValve());
+        BossController.Instance.ShowValve();
 
         while (coroutine != null)
         {   

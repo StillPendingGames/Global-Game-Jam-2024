@@ -122,8 +122,13 @@ public class BossController : MonoBehaviour
         player.DisableInput();
         Debug.Log("Boss Died");
     }
+    
+    public void ShowValve()
+    {
+        StartCoroutine(ShowValveCo());
+    }
 
-    public IEnumerator ShowValve()
+    private IEnumerator ShowValveCo()
     {
         AudioManager.Instance.Play("Valve Appears");
         valve.GetComponent<Collider2D>().enabled = false;
